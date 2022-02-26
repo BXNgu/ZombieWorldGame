@@ -1,0 +1,89 @@
+Design rationale
+
+This application will have 5 types of characters which is Player, Human, Zombie and Farmer and MamboMarie. Player 
+and Farmer will then inherits to Human class and Zombie, Doctor and MamboMarie will inherits to ZombieActor class. Player 
+can performs 12 types of actions which is EatingAction, HarvestAction, CraftingAction, RepairAction, ChopTreeAction, 
+SetTrapAction and WinGameAction, ShotgunAttackAction, ShotgunAttackDirectionAction, SniperRifleAttackAction, InstakillAction
+and SniperRifleAimingAction. All of these actions will inherits to Action class. CraftingAction can creates 2 types of 
+weapons which is Club and Mace. Club and Mace will inherits to WeaponItem class. 
+Each Human object will have 4 behaviours which is EatingBehaviour, WanderBehaviour and PickUpItemBehaviour. These behaviours 
+will implements to Behaviour interface. WanderBehaviour will performs MoveActorAction where this MoveActorAction class will 
+inherits to Action class. EatingBehaviour will performs EatingAction. 
+Farmer can create Crop where this Crop class will inherits to Ground class. Other than that, Farmer will have 4 types of
+behaviours which is WanderBehaviour, HarvestBehaviour and SowingBehaviour.These 3 behaviours will implements to Behaviour 
+interface. HarvestBehaviour will performs HarvestAction where this HarvestAction will create a PortableItem. For 
+SowingBehaviour, it will performs 2 types of actions which is SowingAction and FertiliseAction which also inherits to Action
+class.
+Each Zombie will have 5 types of behaviours which is WanderBehaviour, HuntBehaviour, PickUpItemBehaviour, DropItemBehaviour 
+and AttackBehaviour. These behaviours will inherits to Behaviours interface. AttackBehaviour will performs AttackAction
+where this AttackAction class will inherits to Action class. AttackAction class will create a corpse which is PortableItem. 
+Each Zombie will also have BodyParts, Zombie will creates Arm and Leg class where Arm and Leg class will inherits to 
+WeaponItem class. MamboMarie have 2 types of behaviour which is ChantingBehaviour and WanderBehaviour. 
+ChantingBehaviour will performs ChantingAction which inherits to Action class.
+
+The Player class act as a main character of the whole application. CraftingAction class that can be performs by Player is use
+to craft powerful weapons like Club and Mace. HarvestAction class allows Player to harvest the ripe crops that is beside the 
+Player's position. EatingAction class allows Player to eat food(ripe crops) to recover some health points. RepairAction will
+be perform by Player to repair the spoiled trap on the ground. ChopTreeAction allows Player to chop the grown trees to get 
+woods. SetTrapAction can be perform by the Player to set a trap on the ground if the Player's inventory have 4 woods. 
+WinGameAction is an action that will check the number of zombies on the map. If the zombies on the map is zero, then 
+WinGameAction will perform. ShotgunAttackAction can be perform by Player if the Player have a Shotgun in his inventory. 
+ShotgunAttackDirectionAction will return a list of direction for Player to shoot. SniperRifleAttackAction can be perform 
+by Player if the Player have a Sniper Rifle in his inventory. InstakillAction can be perform by the Player when the Player 
+had aim a target for 2 turns so that the Player can kill the target with one shot. SniperRifleAimingAction is use to aim for
+a target when using Sniper Rifle as a weapon.
+The Human class act as a supporting role for this application. Human can only wander around in this application, when Human
+have a food on his current position and the Human's health is not full, Human can perform EatingBehaviour to eat the food to 
+recover his health points. 
+Farmer class is also a supporting role for this application. Farmer class is almost the same as Human class just that Farmer 
+class can sow crops and harvest crops. SowBehaviour allows Farmer to sow crops by performing SowAction. SowBehaviour also 
+allows Farmer to fertilise the crops by performing FertiliseAction. HarvestBehaviour allows Farmer to harvest the ripe crops 
+by performing HarvestAction. The ripe crops will then become a food(PortableItem) that can be picked up by Player and Human.
+Zombie class act as a supporting role in this application. Zombie can perform PickUpItemAction to pick up weapons on the 
+ground and make it as it's primary weapon. Zombie will perform HuntBehaviour to hunt for Player, Human or Farmer if the 
+Zombie and the target is between 10 spaces or else Zombie will just wander around by performing WanderBehaviour. 
+AttackBehaviour allows Zombie to attack target by performing AttackAction.
+MamboMarie class also act as a supporting role in this appliaction. MamboMarie can perform ChantingAction to summon zombies 
+on the map.
+
+When the Player's inventory has Arm or Leg, the application will add a new action into the menu. When the user enters the 
+key with the new action, the Arm or Leg will be crafted into Club or Mace. When the Player is standing on or next to a ripe 
+crop, the menu will then add another new action that asking the Player to harvest the crop and add it into Player's inventory.
+When the Player's inventory has food in it, the menu will add new action for EatingAction. When the Player is standing next
+to a spoiled trap, the menu will add a new action to repair the trap by using 2 woods inside the Player's inventory. When the
+Player stands next to a grown tree, the menu will add a new action for the Player to chop the tree. When the tree is chopped,
+if will dropped a wood that can be use to create a trap and repair a trap. When the Player is standing on a Dirt and the 
+Player's inventory has 4 woods in it, there will be a new action added into the menu telling that the Player to set a trap on
+the ground. WinGameAction will be perform when all of the zombies is killed. When the Player is having a Shotgun as a weapon,
+it will have 8 types of direction to attack, and when the Player shoots to a direction, the Actors that is standing at the 
+direction will get damaged by the Player. When the Player is having a Sniper Rifle as a weapon, Player can aim for a target 
+within 10 spaces to improved the accuracy and damage of the Sniper Rifle. When the Player aims a target 2 round straight, the
+Player can kill the target in one shot.
+Whereas for Human class, Human can only wander around and if the Human's health points is not full and the Human is standing
+on a food, the Human will then consume the food to recover some health points. Farmer class will not have EatingAction 
+compare to Player and Human class.
+Farmer will only sow crop on the ground and fertilise the crop when there is one next to the Farmer. When the Farmer is 
+standing on or next to a ripe crop, the Farmer will harvest the crop and the food will drop on the ripe crop's position.
+For Zombie class, if the Zombie is standing on a weapon, it will pick up the weapon and use it to attack a target. When the 
+target and the Zombie is between 10 spaces, the Zombie will then hunt for the target. If the target is next to the Zombie, 
+Zombie will attack the target using the weapon if there is one or else it will just use punch or bite as it's attack.
+Whenever a Zombie kills a target, the target will then become a corpse(PortableItem). After a few turns, the corpse will 
+change to a Zombie. If a Zombie is getting attacked, it will have chances to drop their Arm or Leg. If the Zombie have a 
+weapon, it will have a chance to drop the weapon too. If Player picks up the Arm or Leg, Player can use it as a weapon or 
+craft it into a more powerful weapon. 
+MamboMarie will only chant for every 10 turns. When the MamboMarie chants, it will summons 5 zombies on the map. MamboMarie 
+will vanish after 30 turns and will have 5% chance to come back to the map. If the MamboMarie is killed, it will not come back
+until the end of the game.
+
+
+Bonus Feature
+Doctor will have 4 types of behaviour which is WanderBehaviour, HealingBehaviour, BackToHospitalBehaviour and
+CleaningUpCorpseBehaviour. These 4 behaviours will implements to Behaviour class. HealingBehaviour will performs 
+HealingAction which will inherits to Action class. CleaningUpCorpseBehaviour will performs CleaningUpCorpseAction which also
+inherits to Action class. BackToHospitalBehviour will perform MoveActorAction which will inherits to Action class.
+Doctor class also act as a supporting role in this application. Doctor can perform HealingAction to heal Player, Farmer or 
+Human next to him. Doctor can perform CleaningUpCorpseAction to remove the corpse on the ground. Doctor will perform 
+BackToHospitalBehaviour to refill the First-Aid-Kit.
+Doctor can heals the damaged Actor next to him. Doctor can heal Actor whenever Doctor's inventory have First-Aid-Kit. When
+Doctor is standing beside a corpse, the Doctor can remove the corpse so that the corpse would not be rise and become a Zombie.
+If Doctor's inventory does not contain any First-Aid-Kit, then the Doctor will go to Hospital to refill the First-Aid-Kit.

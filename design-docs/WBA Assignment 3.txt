@@ -1,0 +1,28 @@
+Work Breakdown Agreement
+Assignment 3
+
+
+Task						In-Charge		Checking		Due Date
+----------------------------------------------------------------------------------------------------------------
+Going to town				Bing Xian		Wincent			Week 12
+
+New weapon					Wincent			Bing Xian		Week 12
+
+Mambo Marie					Bing Xian		Wincent			Week 12
+
+Ending the game				Wincent			Bing Xian 		Week 12
+
+Bonus Mark
+- Hospital					Wincent			Bing Xian		Week 12
+- Doctor					Bing Xian &		Wincent &		Week 12
+							Wincent			Bing Xian		Week 12
+- Trap						Bing Xian		Wincent			Week 12
+
+Recommendations for			Wincent &		Wincent &		Week 12
+change to the game 			BingXian		Bing Xian
+engine
+
+Sequence Diagram			Bing Xian		Wincent 		Week 12
+
+I, Wincent agree with this agreement.
+I, Bing Xian agree with this agreement.

@@ -1,0 +1,15 @@
+Work Breakdown Agreement
+Assignment 1
+
+
+Task						In-Charge			Due Date
+----------------------------------------------------------------------------------------------------------------
+Class diagram					Bing Xian			Week 7
+
+Design rationale				Wincent				Week 7
+
+
+
+
+I, Bing Xian agree with this agreement.
+I, Wincent agree with this agreement.

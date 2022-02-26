@@ -1,0 +1,42 @@
+Work Breakdown Agreement
+Assignment 2
+
+
+Task								In-Charge			Checking		Due Date
+---------------------------------------------------------------------------------------------------------------------------------
+Zombie Attacks							Wincent				Bing Xian		Week 9
+-add bite attacks in Zombie class
+-add a new class PickUpItemBehaviour
+-add "Braaains" in playTurn method(Zombie)
+
+Beating Up the Zombies						Wincent				Bing Xian		Week 9
+-create BodyParts class
+-create dropArms method (BodyParts)
+-create dropLegs method (BodyParts)
+
+
+Crafting Weapons						Bing Xian			Bing Xian		Week 9
+								Wincent				Wincent
+-create Club and Mace class
+
+
+Rising From the Dead + comment					Bing Xian			Wincent 		Week 9
+-modify playTurn(Human class)
+-create RisingDead class
+-create counter method(RisingDead)
+-create Zombie object(RisingDead)
+
+
+Farmers and Food 						Bing Xian			Wincent			Week 9
+-create Farmer class
+-create Harvest method(Farmer)
+-create SowingCrop method(Farmer)
+-create Crop class
+-create Fertilise method(Crop)
+-create HarvestAction class
+-create EatingAction class
+-add HarvestAction and EatingAction(Player)
+
+
+I, Bing Xian agree with this agreement.
+I, Wincent agree with this agreement.
